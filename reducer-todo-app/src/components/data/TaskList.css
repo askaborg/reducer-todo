@@ -1,8 +1,7 @@
-
 .completed {
-    text-decoration: line-through;
+    text-decoration: line-through
   }
   
 .active {
-    text-decoration: none;
+    text-decoration: none
   }

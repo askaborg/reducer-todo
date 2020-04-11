@@ -10,15 +10,15 @@ export const TodoList = () => {
     return (
       <div>
         {
-          state.items.map( item => {
-            return (<TaskList item={item} 
-                onClick={ id => dispatch({ type: 'TOGGLE_COMPLETED',
-                payload: id })} />
+            state.items.map( item => {
+                return (<TaskList item={item} 
+                    onClick={ id => dispatch({ type: "TOGGLE_COMPLETED",
+                    payload: id })} />
                 )
-          })
+            })
         }
-        <Task onClear={ () => dispatch({type: 'CLEAR_COMPLETED'}) }
-            onSubmit={ (item) => dispatch({ type: 'ADD_TODO', payload: item })} />
+        <Task onClear={ () => dispatch({ type: "CLEAR_COMPLETED" })}
+            onSubmit={ (item) => dispatch({ type: "ADD_TODO", payload: item })} />
       </div>
     )
 }

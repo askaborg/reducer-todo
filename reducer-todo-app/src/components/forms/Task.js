@@ -2,6 +2,12 @@ import React, { useState } from 'react'
 
 export const Task = (props) => {
     const [updateTask, setTask] = useState({value: ""})
+    
+    const handleSubmit = e => {
+        e.preventDefault()
+        props.onSubmit(updateTask.value)
+        setTask({ value: "" })
+    }
 
     return (
         <form onSubmit={e => handleSubmit(e)}>
@@ -13,10 +19,4 @@ export const Task = (props) => {
             <button onClick={() => props.onClear()}>Clear Completed</button>
         </form>
     )
-    
-    function handleSubmit(e) {
-        e.preventDefault()
-        props.onSubmit(updateTask.value)
-        setTask({ value: "" })
-    }
 }
